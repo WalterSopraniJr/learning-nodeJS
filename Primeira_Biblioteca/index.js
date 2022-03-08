@@ -1,5 +1,5 @@
-const chalk = require('chalk');
-const fs = require('fs');
+import chalk from 'chalk'
+import fs from 'fs'
 
 function extraiLinks(texto) {
   const regex = /\[([^\]]*)\]\((https?:\/\/[^$#\s].[^\s]*)\)/gm;
@@ -25,4 +25,6 @@ async function pegaArquivo(caminhoDoArquivo) {
   }
 }
 
-pegaArquivo('./arquivos/texto1.md');
+//pegaArquivo('./arquivos/texto1.md');
+
+module.exports = pegaArquivo
