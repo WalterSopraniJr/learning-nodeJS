@@ -15,7 +15,7 @@ function trataErro(erro) {
   throw new Error(chalk.red(erro.code, 'não há arquivo no caminho'));
 }
 
-async function pegaArquivo(caminhoDoArquivo) {
+export default async function pegaArquivo(caminhoDoArquivo) {
   const encoding = 'utf-8';
   try {
     const texto = await fs.promises.readFile(caminhoDoArquivo, encoding)
@@ -27,4 +27,4 @@ async function pegaArquivo(caminhoDoArquivo) {
 
 //pegaArquivo('./arquivos/texto1.md');
 
-module.exports = pegaArquivo
+//module.exports = pegaArquivo;
