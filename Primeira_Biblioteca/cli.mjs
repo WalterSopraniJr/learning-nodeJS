@@ -1,9 +1,11 @@
+import chalk from 'chalk'
 import {pegaArquivo}  from './index.mjs';
-//const pegaArquivo = require('./index')
-
-//const pegaArquivo1 = pegaArquivo()
 
 const caminho = process.argv
 
+async function processaTexto(caminhoDeArquivo) {
+    const resultado = await pegaArquivo(caminhoDeArquivo[2]);
+    console.log(chalk.yellow('lista de links'), resultado);
+}
 
-console.log(pegaArquivo(caminho[2]))
+processaTexto(caminho)
