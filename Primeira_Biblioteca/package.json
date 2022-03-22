@@ -1,7 +1,16 @@
 {
   "type": "module",
+  "name": "primeira_biblioteca",
+  "version": "1.0.0",
+  "description": "",
+  "main": "cli.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "chalk": "^5.0.0"
-   
+    "chalk": "^5.0.1"
   }
 }
