@@ -1,5 +1,6 @@
 import chalk from 'chalk'
 import fs from 'fs'
+import path from 'path'
 
 function extraiLinks(texto) {
   const regex = /\[([^\]]*)\]\((https?:\/\/[^$#\s].[^\s]*)\)/gm;
@@ -24,3 +25,4 @@ export  async function pegaArquivo(caminhoDoArquivo) {
     trataErro(erro);
   }
 }
+

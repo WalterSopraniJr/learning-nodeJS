@@ -7,11 +7,5 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "cli": "node cli.mjs ./arquivos/texto1.md"
-  },
-  
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "chalk": "^5.0.1"
-  }
+   }
 }
