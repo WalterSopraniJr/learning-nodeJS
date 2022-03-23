@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize')
-const instancia = require('../../banco-de-dados')
+const instancia = require('../../../banco-de-dados')
 
 const colunas = {
     empresa: {
@@ -26,4 +26,4 @@ const opcoes = {
 
 }
 
-module.exports = instancia.define{'fornecedor', colunas, opcoes}
+//module.exports = instancia.define{'fornecedor', colunas, opcoes}
