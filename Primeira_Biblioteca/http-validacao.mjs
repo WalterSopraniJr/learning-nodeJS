@@ -1,4 +1,4 @@
-export default function validaURLs() {
-    console.log(arrayLinks)
+export default function validaURLs(arrayLinks) {
+    return arrayLinks;
 }
 
