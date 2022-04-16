@@ -7,7 +7,7 @@ function extraiLinks(texto) {
   const arrayResultados = [];
   let temp;
   while((temp = regex.exec(texto)) !== null) {
-    arrayResultados.push({ [temp[1]]: temp[2] })
+    arrayResultados.push({ [temp[1]]: temp[2] });
   }
   return arrayResultados.length === 0 ? 'não há links' : arrayResultados;
 }
@@ -19,7 +19,7 @@ function trataErro(erro) {
 export  async function pegaArquivo(caminhoDoArquivo) {
   const encoding = 'utf-8';
   try {
-    const texto = await fs.promises.readFile(caminhoDoArquivo, encoding)
+    const texto = await fs.promises.readFile(caminhoDoArquivo, encoding);
     return(extraiLinks(texto));
   } catch(erro) {
     trataErro(erro);
