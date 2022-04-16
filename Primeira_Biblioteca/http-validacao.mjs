@@ -1,11 +1,20 @@
 import fetch from 'node-fetch';
 
+function manejaErros(erro) {
+    throw new Error(erro.message);
+}
+
 async function checaStatus(arrayURLs) {
-    const arrayStatus = await Promise.all(arrayURLs.map(async url => {
-        const response = await fetch(url);
-        return response.status;
-    }))
-    return arrayStatus;
+    try {
+        const arrayStatus = await Promise.all(arrayURLs.map(async url => {
+            const response = await fetch(url);
+            return `${response.status} - ${response.statusText}`;
+        }))
+        return arrayStatus;
+    } catch(erro) {
+        manejaErros(erro);
+    }
+
 }
 
 function geraArrayDeURLs(arrayLinks) { 
@@ -15,6 +24,11 @@ function geraArrayDeURLs(arrayLinks) {
 export default async function validaURLs(arrayLinks) {
     const links = geraArrayDeURLs(arrayLinks);
     const statusLinks = await checaStatus(links);
-    return statusLinks;
+    //spread operator
+    const resultados = arrayLinks.map((objeto, indice) => ({ 
+        ...objeto, 
+        status: statusLinks[indice] 
+    } ) );    
+    return resultados;
 }
 
